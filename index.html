@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chameleon SiteBox | Сайт для вашего бизнеса за 3 дня</title>
+    <meta name="description" content="Лендинги для малого бизнеса в Казахстане. Сайт за 3 дня.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Chameleon <span>SiteBox</span></a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#how-it-works" class="nav-link" data-i18n="nav_how">Как это работает</a></li>
+                    <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">Тарифы</a></li>
+                    <li><a href="#portfolio" class="nav-link" data-i18n="nav_portfolio">Портфолио</a></li>
+                    <li><a href="#contact" class="nav-link btn btn-outline" data-i18n="nav_contact">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="RU">RU</button>
+                <button class="lang-btn" data-lang="KZ">KZ</button>
+                <button class="lang-btn" data-lang="EN">EN</button>
+            </div>
+            <button class="mobile-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title" data-i18n="hero_title">Сайт для вашего бизнеса за <span class="highlight">3 дня</span></h1>
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">Лендинги для малого бизнеса в Казахстане. Привлекайте клиентов уже на этой неделе.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary btn-large" data-i18n="hero_cta">Получить сайт</a>
+                        <a href="#how-it-works" class="btn btn-text" data-i18n="hero_secondary">Узнать подробнее &rarr;</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="glass-card mockup-card">
+                        <div class="mockup-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="skeleton-title"></div>
+                            <div class="skeleton-text"></div>
+                            <div class="skeleton-text short"></div>
+                            <div class="skeleton-button"></div>
+                        </div>
+                    </div>
+                    <div class="floating-badge badge-1" data-i18n="badge1">
+                        🚀 Быстрый запуск
+                    </div>
+                    <div class="floating-badge badge-2" data-i18n="badge2">
+                        📱 Адаптивный дизайн
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bg-glow"></div>
+        </section>
+
+        <!-- How it works Section -->
+        <section class="how-it-works section" id="how-it-works">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" data-i18n="how_title">Как мы работаем</h2>
+                    <p class="section-subtitle" data-i18n="how_subtitle">Простой путь к вашему новому сайту</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <h3 class="step-title" data-i18n="step1_title">Заявка</h3>
+                        <p class="step-desc" data-i18n="step1_desc">Вы оставляете заявку. Мы связываемся с вами для обсуждения деталей вашего бизнеса и пожеланий.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <h3 class="step-title" data-i18n="step2_title">Разработка</h3>
+                        <p class="step-desc" data-i18n="step2_desc">Мы создаем современный дизайн, пишем тексты и программируем сайт с учетом всех требований.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <h3 class="step-title" data-i18n="step3_title">Запуск</h3>
+                        <p class="step-desc" data-i18n="step3_desc">Тестируем и запускаем ваш новый сайт. Теперь он готов приносить вам новых клиентов!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing section bg-light" id="pricing">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" data-i18n="pricing_title">Прозрачные тарифы</h2>
+                    <p class="section-subtitle" data-i18n="pricing_subtitle">Выберите подходящий формат сотрудничества</p>
+                </div>
+                <div class="pricing-grid">
+                    <!-- Card 1 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title" data-i18n="dev_title">Разработка</h3>
+                            <div class="pricing-price">35 000 <span data-i18n="dev_price_sub">₸ единоразово</span></div>
+                            <p class="pricing-desc">Полноценный сайт для вашего бизнеса</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="dev_f1">Индивидуальный дизайн</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="dev_f2">Адаптация под смартфоны</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="dev_f3">Базовая SEO-оптимизация</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="dev_f4">Форма заявки</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Connector -->
+                    <div class="pricing-connector">
+                        <span data-i18n="pricing_arrow_text">затем</span>
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="connector-arrow"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title" data-i18n="sup_title">Поддержка</h3>
+                            <div class="pricing-price">5 000 <span data-i18n="sup_price_sub">₸ / мес</span></div>
+                            <p class="pricing-desc" data-i18n="sup_note">после запуска сайта</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="sup_f1">Хостинг на вашем домене</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="sup_f3">Поддержка в рабочие часы</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="sup_f4">Регулярные обновления</span></li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> <span data-i18n="sup_f5">Внесение правок</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pricing-note text-center mt-4" style="margin-top: 40px;">
+                    <p data-i18n="pricing_footer_note">Сначала вы платите за разработку, затем подключаете поддержку.</p>
+                    <a href="#contact" class="btn btn-primary btn-large" style="margin-top: 24px;" data-i18n="dev_btn">Начать проект</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio section" id="portfolio">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" data-i18n="portfolio_title">Наши работы</h2>
+                    <p class="section-subtitle" data-i18n="portfolio_subtitle">Примеры сайтов, которые мы создали</p>
+                </div>
+                <div class="portfolio-placeholder">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                        </div>
+                        <h3 data-i18n="portfolio_empty">Скоро здесь появятся наши работы</h3>
+                        <p data-i18n="portfolio_desc">Мы активно работаем над новыми проектами и скоро их покажем.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact section" id="contact">
+            <div class="container contact-container">
+                <div class="contact-info">
+                    <h2 class="section-title" data-i18n="contact_title">Готовы начать?</h2>
+                    <p class="contact-desc" data-i18n="contact_subtitle">Оставьте заявку, и мы свяжемся с вами в течение 15 минут для обсуждения вашего проекта.</p>
+                    
+                    <div class="contact-methods">
+                        <a href="https://wa.me/77076478572" target="_blank" class="whatsapp-btn">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <span data-i18n="contact_whatsapp">Написать в WhatsApp</span>
+                        </a>
+                        <span class="or-divider">или</span>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper glass-card">
+                    <form id="lead-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-i18n="form_name_label">Ваше имя</label>
+                            <input type="text" id="name" name="name" data-i18n-placeholder="placeholder_name" placeholder="Алим Алимов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-i18n="form_phone_label">Номер телефона</label>
+                            <input type="tel" id="phone" name="phone" data-i18n-placeholder="placeholder_phone" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="business" data-i18n="form_business_label">Тип бизнеса / Ниша</label>
+                            <input type="text" id="business" name="business" data-i18n-placeholder="placeholder_business" placeholder="Например: Салон красоты" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full submit-btn" data-i18n="form_submit">Оставить заявку</button>
+                        <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">Chameleon <span>SiteBox</span></a>
+                <p class="footer-desc" data-i18n="footer_desc">Быстрые и эффективные лендинги для малого бизнеса в Казахстане.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#how-it-works" data-i18n="nav_how">Как мы работаем</a></li>
+                    <li><a href="#pricing" data-i18n="nav_pricing">Тарифы</a></li>
+                    <li><a href="#portfolio" data-i18n="nav_portfolio">Портфолио</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 data-i18n="nav_contact">Контакты</h4>
+                <p>Казахстан</p>
+                <p><a href="mailto:chameleon.sitebox@gmail.com">chameleon.sitebox@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Chameleon SiteBox. <span data-i18n="footer_rights">Все права защищены.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
