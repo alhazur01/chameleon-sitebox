@@ -10,7 +10,7 @@ const TRANSLATIONS = {
     step3_title: "Запуск", step3_desc: "Тестируем и запускаем ваш новый сайт. Теперь он готов приносить вам новых клиентов!",
     pricing_title: "Прозрачные тарифы", pricing_subtitle: "Выберите подходящий формат сотрудничества",
     dev_title: "Разработка", dev_price_sub: "единоразово",
-    dev_f1: "Индивидуальный дизайн", dev_f2: "Адаптация под смартфоны", dev_f3: "Базовая SEO-оптимизация", dev_f4: "Форма заявки",
+    dev_f1: "Индивидуальный дизайн", dev_f2: "Адаптация под смартфоны", dev_f3: "Базовая SEO-оптимизация", dev_f4: "Форма заявки от клиентов", dev_f5: "Интеграция соцсетей (Instagram, WhatsApp)",
     dev_btn: "Заказать сайт",
     sup_title: "Поддержка", sup_price_sub: "после запуска сайта", sup_note: "Всё включено: хостинг, поддержка, правки",
     sup_f1: "Хостинг на вашем домене", sup_f2: "Домен", sup_f3: "Поддержка в рабочие часы", sup_f4: "Регулярные обновления", sup_f5: "Внесение правок",
@@ -37,7 +37,7 @@ const TRANSLATIONS = {
     step3_title: "Іске қосу", step3_desc: "Жаңа сайтыңызды тестілеп, іске қосамыз. Енді ол сізге жаңа клиенттер әкелуге дайын!",
     pricing_title: "Ашық тарифтер", pricing_subtitle: "Ынтымақтастықтың қолайлы форматын таңдаңыз",
     dev_title: "Әзірлеу", dev_price_sub: "бір рет",
-    dev_f1: "Жеке дизайн", dev_f2: "Смартфондарға бейімдеу", dev_f3: "Базалық SEO-оңтайландыру", dev_f4: "Өтінім формасы",
+    dev_f1: "Жеке дизайн", dev_f2: "Смартфондарға бейімдеу", dev_f3: "Базалық SEO-оңтайландыру", dev_f4: "Клиенттерден өтінім формасы", dev_f5: "Әлеуметтік желілер интеграциясы (Instagram, WhatsApp)",
     dev_btn: "Сайт тапсырыс беру",
     sup_title: "Қолдау", sup_price_sub: "сайт іске қосылғаннан кейін", sup_note: "Барлығы кіреді: хостинг, қолдау, түзетулер",
     sup_f1: "Доменіңіздегі хостинг", sup_f2: "Домен", sup_f3: "Жұмыс уақытында қолдау", sup_f4: "Тұрақты жаңартулар", sup_f5: "Түзетулер енгізу",
@@ -64,7 +64,7 @@ const TRANSLATIONS = {
     step3_title: "Launch", step3_desc: "We test and launch your new website. It's ready to bring you new clients!",
     pricing_title: "Transparent pricing", pricing_subtitle: "Choose the right format of cooperation",
     dev_title: "Development", dev_price_sub: "one-time",
-    dev_f1: "Custom design", dev_f2: "Mobile responsive", dev_f3: "Basic SEO optimization", dev_f4: "Contact form",
+    dev_f1: "Custom design", dev_f2: "Mobile responsive", dev_f3: "Basic SEO optimization", dev_f4: "Client request form", dev_f5: "Social media integration (Instagram, WhatsApp)",
     dev_btn: "Order a website",
     sup_title: "Support", sup_price_sub: "after launch", sup_note: "All included: hosting, support, edits",
     sup_f1: "Hosting on your domain", sup_f2: "Domain", sup_f3: "Support during working hours", sup_f4: "Regular updates", sup_f5: "Content edits",
@@ -200,6 +200,61 @@ document.addEventListener('DOMContentLoaded', () => {
     // Simple Form Submission Handler
     const leadForm = document.getElementById('lead-form');
     if (leadForm) {
+        const nameInput = document.getElementById('name');
+        const phoneInput = document.getElementById('phone');
+        const businessInput = document.getElementById('business');
+        const submitBtn = leadForm.querySelector('.submit-btn');
+
+        // Initial state
+        submitBtn.disabled = true;
+
+        const validateForm = () => {
+            const nameValid = nameInput.value.trim().length >= 3;
+            const businessValid = businessInput.value.trim().length >= 1;
+            // A fully formatted number is 18 chars long or has 11 digits total
+            const phoneValid = phoneInput.value.replace(/\D/g, '').length === 11 && phoneInput.value.startsWith('+7');
+
+            submitBtn.disabled = !(nameValid && businessValid && phoneValid);
+        };
+
+        nameInput.addEventListener('input', validateForm);
+        businessInput.addEventListener('input', validateForm);
+
+        phoneInput.addEventListener('focus', () => {
+            if (phoneInput.value === '') {
+                phoneInput.value = '+7';
+            }
+        });
+
+        phoneInput.addEventListener('input', () => {
+            let val = phoneInput.value;
+            let digits = val.replace(/\D/g, '');
+            
+            // Remove the leading 7 if it's there, as we will hardcode +7
+            if (digits.startsWith('7')) {
+                digits = digits.substring(1);
+            }
+            
+            digits = digits.substring(0, 10);
+            
+            let formatted = '+7';
+            if (digits.length > 0) {
+                formatted += ' (' + digits.substring(0, 3);
+            }
+            if (digits.length >= 4) {
+                formatted += ') ' + digits.substring(3, 6);
+            }
+            if (digits.length >= 7) {
+                formatted += '-' + digits.substring(6, 8);
+            }
+            if (digits.length >= 9) {
+                formatted += '-' + digits.substring(8, 10);
+            }
+
+            phoneInput.value = formatted;
+            validateForm();
+        });
+
         leadForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -226,6 +281,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: formData
             })
             .then(() => {
+                // Telegram Notification
+                const TELEGRAM_TOKEN = '8408107241:AAH3UUEZepNibPT54AolRjc7VKSZ9ZDFpRg';
+                const TELEGRAM_CHAT_ID = '5113132345';
+                const nameVal = document.getElementById('name').value;
+                const phoneVal = document.getElementById('phone').value;
+                const businessVal = document.getElementById('business').value;
+                const text = `🆕 Новая заявка!\n👤 Имя: ${nameVal}\n📞 Телефон: ${phoneVal}\n💼 Бизнес: ${businessVal}`;
+
+                fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: text
+                    })
+                }).catch(err => console.error('Telegram error:', err));
+
                 submitBtn.textContent = successText;
                 submitBtn.style.backgroundColor = '#27C93F';
                 submitBtn.style.color = '#fff';

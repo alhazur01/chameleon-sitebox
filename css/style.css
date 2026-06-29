@@ -481,6 +481,18 @@ img {
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
+.pricing-card.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px var(--clr-primary);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .pricing-card.popular {
     border-color: var(--clr-accent);
     box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
@@ -844,6 +856,12 @@ img {
     .lang-switcher {
         margin-left: auto;
         margin-right: 16px;
+    }
+    .mobile-toggle {
+        margin-left: auto;
+    }
+    .logo-img {
+        height: 64px;
     }
 }
 
