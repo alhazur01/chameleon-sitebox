@@ -650,6 +650,28 @@ img {
     box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
 }
 
+.telegram-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: #229ED9;
+    color: white;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: var(--fw-bold);
+    font-size: 1.125rem;
+    transition: var(--transition);
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.telegram-btn:hover {
+    background-color: #1C85B8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(34, 158, 217, 0.3);
+}
+
 .or-divider {
     display: block;
     text-align: center;
